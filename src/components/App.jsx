@@ -19,9 +19,8 @@ function App() {
   });
 
   useEffect(() => {
-    window.localStorage.setItem("User", JSON.stringify([ ...contacts ]));
+    window.localStorage.setItem("User", JSON.stringify([...contacts]));
   }, [contacts]);
-
 
   const [filter, setFilter] = useState("");
 
