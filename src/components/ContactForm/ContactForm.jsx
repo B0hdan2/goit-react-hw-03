@@ -3,17 +3,16 @@ import { useId } from "react";
 import { nanoid } from "nanoid";
 import * as Yup from "yup";
 import s from "./ContactForm.module.css";
+import PropTypes from "prop-types";
 
 function ContactForm({ addUser }) {
   const nameId = useId();
   const telId = useId();
-
   const validationSchema = Yup.object().shape({
     name: Yup.string()
       .required("Name is required")
       .min(3, "Name must be at least 3 characters")
       .max(50, "Name cannot exceed 50 characters"),
-
     number: Yup.string()
       .required("Number is required")
       .min(3, "Number must be at least 3 characters")
@@ -67,5 +66,9 @@ function ContactForm({ addUser }) {
     </>
   );
 }
+
+ContactForm.propTypes = {
+  addUser: PropTypes.func.isRequired,
+};
 
 export default ContactForm;

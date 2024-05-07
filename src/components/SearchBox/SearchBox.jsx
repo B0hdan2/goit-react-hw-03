@@ -1,4 +1,6 @@
 import s from "./SearchBox.module.css";
+import PropTypes from "prop-types";
+
 function SearchBox({ value, onFilter }) {
   return (
     <>
@@ -12,5 +14,10 @@ function SearchBox({ value, onFilter }) {
     </>
   );
 }
+
+SearchBox.propTypes = {
+  value: PropTypes.string.isRequired,
+  onFilter: PropTypes.func.isRequired,
+};
 
 export default SearchBox;
